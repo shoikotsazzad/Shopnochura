@@ -97,14 +97,14 @@ export default function Gallery() {
           className="text-center mb-14"
         >
           <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="w-8 h-px bg-brand-green" />
-            <span className="text-brand-green text-sm font-body font-medium tracking-wider uppercase">
+            <div className="w-8 h-px bg-brand-red" />
+            <span className="text-brand-red text-sm font-body font-medium tracking-wider uppercase">
               Gallery
             </span>
-            <div className="w-8 h-px bg-brand-green" />
+            <div className="w-8 h-px bg-brand-red" />
           </div>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-brand-cream mb-4">
-            See the <span className="text-gradient-red-green">Vibe</span>
+            See the <span style={{ color: '#4C8CE4' }}>Vibe</span>
           </h2>
           <p className="font-body text-brand-cream/50 text-base max-w-lg mx-auto">
             Art murals, rooftop fairy lights, cozy interiors — this is Shopnochura.
