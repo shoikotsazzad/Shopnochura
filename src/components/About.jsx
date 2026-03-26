@@ -68,17 +68,18 @@ export default function About() {
       </div>
 
       {/* ── RIGHT: Content panel ── */}
-      <div className="flex-1 bg-brand-dark flex flex-col justify-center px-6 sm:px-8 md:px-12 py-10">
+      <div className="flex-1 bg-brand-dark flex flex-col justify-center px-6 sm:px-8 md:px-12 py-10 lg:items-start items-center text-center lg:text-left">
 
         {/* Label */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="flex items-center gap-3 mb-8"
+          className="flex items-center justify-center lg:justify-start gap-3 mb-8"
         >
           <div className="w-8 h-px bg-brand-red" />
           <span className="text-brand-red text-xs font-body font-semibold tracking-[0.25em] uppercase">Our Story</span>
+          <div className="w-8 h-px bg-brand-red lg:hidden" />
         </motion.div>
 
         {/* Headline */}
@@ -98,7 +99,7 @@ export default function About() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="flex gap-8 mb-6 pb-6 border-b border-brand-cream/10"
+          className="flex justify-center lg:justify-start gap-8 mb-6 pb-6 border-b border-brand-cream/10 w-full"
         >
           {stats.map((s) => (
             <div key={s.label}>
@@ -134,9 +135,9 @@ export default function About() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.4 }}
-          className="flex flex-col gap-2 mb-6"
+          className="flex flex-col items-center lg:items-start gap-2 mb-6"
         >
-          <div className="flex gap-2">
+          <div className="flex flex-wrap justify-center lg:justify-start gap-2">
             {tagsRow1.map((t) => (
               <span
                 key={t}
@@ -146,7 +147,7 @@ export default function About() {
               </span>
             ))}
           </div>
-          <div className="flex gap-2">
+          <div className="flex flex-wrap justify-center lg:justify-start gap-2">
             {tagsRow2.map((t) => (
               <span
                 key={t}
@@ -163,7 +164,7 @@ export default function About() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.45 }}
-          className="flex items-center gap-4"
+          className="flex items-center justify-center lg:justify-start gap-4"
         >
           <a
             href="#menu"
@@ -184,7 +185,7 @@ export default function About() {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.7, delay: 0.55 }}
-          className="mt-6 pt-5 border-t border-brand-cream/5"
+          className="mt-6 pt-5 border-t border-brand-cream/5 w-full"
         >
           <p className="font-body text-brand-cream/30 text-xs tracking-wide">
             📍 6th Floor, Lake View Officers Club · Lake View Road, Madaripur 7900, Bangladesh
