@@ -13,7 +13,7 @@ export default function Footer() {
               className="h-10 w-auto object-contain"
               onError={(e) => { e.target.style.display = 'none' }}
             />
-            <div>
+            <div className="text-center md:text-left">
               <div className="font-display font-bold text-brand-cream text-base">Shopnochura</div>
               <div className="font-body text-brand-cream/40 text-xs">Rooftop Restaurant & Party Center</div>
             </div>
