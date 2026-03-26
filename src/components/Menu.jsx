@@ -72,7 +72,7 @@ export default function Menu() {
             <div className="w-8 h-px bg-brand-red" />
           </div>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-brand-cream mb-4">
-            Taste Every <span className="text-gradient-red-green">Dream</span>
+            Taste Every <span style={{ color: '#4C8CE4' }}>Dream</span>
           </h2>
           <p className="font-body text-brand-cream/50 text-base max-w-lg mx-auto">
             From rooftop grills to cool mocktails — our menu is a culinary journey across flavors.
