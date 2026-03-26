@@ -46,7 +46,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-20 bg-gradient-to-b from-brand-dark/50 via-brand-dark/30 to-brand-dark" />
 
       {/* Hero content */}
-      <div ref={textRef} className="relative z-30 text-center px-6 max-w-4xl mx-auto">
+      <div ref={textRef} className="relative z-30 text-center px-6 max-w-4xl mx-auto pb-16 sm:pb-0">
         {/* Badge */}
         <div className="hero-text-item inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full border border-brand-red/40 bg-brand-red/10 backdrop-blur-sm">
           <span className="w-2 h-2 rounded-full bg-brand-red animate-pulse" />
@@ -116,7 +116,7 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-2"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 hidden sm:flex flex-col items-center gap-2"
         animate={{ y: [0, 8, 0] }}
         transition={{ repeat: Infinity, duration: 1.8, ease: 'easeInOut' }}
       >

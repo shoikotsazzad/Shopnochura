@@ -42,16 +42,16 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <a href="#home" className="flex items-center gap-3 group">
+        <a href="#home" className="flex items-center gap-2 group">
           <img
             src="/logo..jpg"
             alt="Shopnochura"
-            className="h-12 w-auto object-contain drop-shadow-lg group-hover:scale-105 transition-transform duration-300"
+            className="h-8 sm:h-12 w-auto object-contain drop-shadow-lg group-hover:scale-105 transition-transform duration-300 rounded-md"
             onError={(e) => {
               e.target.style.display = 'none'
             }}
           />
-          <span className="font-display text-xl font-bold text-brand-cream hidden sm:block">
+          <span className="font-display text-base sm:text-xl font-bold text-brand-cream">
             Shopnochura
           </span>
         </a>
@@ -82,7 +82,7 @@ export default function Navbar() {
         {/* Mobile hamburger */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden flex flex-col gap-1.5 p-2"
+          className="md:hidden flex flex-col gap-1.5 p-2 mr-2"
           aria-label="Toggle menu"
         >
           <span className={`block h-0.5 w-6 bg-brand-cream transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
