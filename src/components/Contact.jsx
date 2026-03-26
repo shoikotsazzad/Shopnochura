@@ -47,7 +47,7 @@ export default function Contact() {
   return (
     <section id="contact" ref={sectionRef} className="relative py-16 sm:py-24 px-4 sm:px-6 bg-brand-card/20">
       {/* Top divider */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-px bg-gradient-to-r from-transparent via-brand-green/40 to-transparent" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[600px] h-px bg-gradient-to-r from-transparent via-brand-green/40 to-transparent" />
 
       <div className="max-w-6xl mx-auto">
         {/* Header */}

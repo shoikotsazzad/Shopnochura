@@ -54,7 +54,7 @@ export default function Menu() {
   return (
     <section id="menu" ref={sectionRef} className="relative py-16 sm:py-24 px-4 sm:px-6 bg-brand-card/20">
       {/* Ambient glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-px bg-gradient-to-r from-transparent via-brand-red/40 to-transparent" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[600px] h-px bg-gradient-to-r from-transparent via-brand-red/40 to-transparent" />
 
       <div className="max-w-5xl mx-auto">
         {/* Section header */}

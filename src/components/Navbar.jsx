@@ -40,18 +40,18 @@ export default function Navbar() {
           : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
         {/* Logo */}
-        <a href="#home" className="flex items-center gap-2 group">
+        <a href="#home" className="flex items-center gap-2 group min-w-0">
           <img
             src="/logo..jpg"
             alt="Shopnochura"
-            className="h-8 sm:h-12 w-auto object-contain drop-shadow-lg group-hover:scale-105 transition-transform duration-300 rounded-md"
+            className="h-8 sm:h-12 w-8 sm:w-auto object-contain drop-shadow-lg group-hover:scale-105 transition-transform duration-300 rounded-md shrink-0"
             onError={(e) => {
               e.target.style.display = 'none'
             }}
           />
-          <span className="font-display text-base sm:text-xl font-bold text-brand-cream">
+          <span className="font-display text-sm sm:text-xl font-bold text-brand-cream truncate">
             Shopnochura
           </span>
         </a>
