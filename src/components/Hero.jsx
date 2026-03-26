@@ -48,7 +48,7 @@ export default function Hero() {
       {/* Hero content */}
       <div ref={textRef} className="relative z-30 text-center px-6 max-w-4xl mx-auto pb-16 sm:pb-0">
         {/* Badge */}
-        <div className="hero-text-item inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full border border-brand-red/40 bg-brand-red/10 backdrop-blur-sm">
+        <div className="hero-text-item hidden sm:inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full border border-brand-red/40 bg-brand-red/10 backdrop-blur-sm">
           <span className="w-2 h-2 rounded-full bg-brand-red animate-pulse" />
           <span className="text-brand-cream/80 text-sm font-body tracking-wider uppercase">
             Rooftop Restaurant & Party Center
