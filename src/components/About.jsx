@@ -114,7 +114,7 @@ export default function About() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="font-body text-brand-cream/60 text-sm leading-relaxed mb-3 max-w-md"
+          className="hidden lg:block font-body text-brand-cream/60 text-sm leading-relaxed mb-3 max-w-md"
         >
           Perched on the <span className="text-brand-cream font-medium">6th floor of Lake View Officers Club</span>,
           Shopnochura delivers an unforgettable rooftop dining experience in the heart of Madaripur.
