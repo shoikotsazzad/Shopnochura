@@ -101,14 +101,16 @@ export default function Hero() {
         {/* Stats row */}
         <div className="hero-text-item flex items-center justify-center gap-4 sm:gap-8 mt-12 sm:mt-16 pt-8 border-t border-brand-cream/10">
           {[
-            { value: '120+', label: 'Reviews' },
-            { value: '3.9★', label: 'Rating' },
-            { value: '6th', label: 'Floor' },
-            { value: '11K+', label: 'Followers' },
+            { num: '120', suffix: '+', label: 'Reviews' },
+            { num: '3.9', suffix: '★', label: 'Rating' },
+            { num: '6', suffix: 'th', label: 'Floor' },
+            { num: '11K', suffix: '+', label: 'Followers' },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
-              <div className="font-display text-xl sm:text-2xl font-bold text-brand-red">{stat.value}</div>
-              <div className="font-body text-xs text-brand-cream/50 mt-0.5">{stat.label}</div>
+              <div className="font-display text-xl sm:text-2xl font-bold text-brand-red leading-none">
+                {stat.num}<span className="text-xs sm:text-sm font-semibold align-top mt-0.5 inline-block">{stat.suffix}</span>
+              </div>
+              <div className="font-body text-xs text-brand-cream/50 mt-1">{stat.label}</div>
             </div>
           ))}
         </div>
