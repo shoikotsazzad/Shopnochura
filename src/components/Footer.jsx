@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion'
+import { HashLink } from 'react-router-hash-link'
+import { Link } from 'react-router-dom'
 
 export default function Footer() {
   return (
@@ -22,20 +23,26 @@ export default function Footer() {
           {/* Quick links */}
           <nav className="flex items-center gap-6">
             {[
-              { href: '/#home', label: 'Home' },
-              { href: '/#about', label: 'About' },
-              { href: '/menu', label: 'Menu' },
-              { href: '/#gallery', label: 'Gallery' },
-              { href: '/#contact', label: 'Contact' },
+              { to: '/#home', label: 'Home' },
+              { to: '/#about', label: 'About' },
+              { to: '/#gallery', label: 'Gallery' },
+              { to: '/#contact', label: 'Contact' },
             ].map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
+              <HashLink
+                key={link.to}
+                smooth
+                to={link.to}
                 className="font-body text-brand-cream/40 hover:text-brand-cream text-xs transition-colors duration-200 capitalize"
               >
                 {link.label}
-              </a>
+              </HashLink>
             ))}
+            <Link
+              to="/menu"
+              className="font-body text-brand-cream/40 hover:text-brand-cream text-xs transition-colors duration-200 capitalize"
+            >
+              Menu
+            </Link>
           </nav>
 
           {/* Copyright */}

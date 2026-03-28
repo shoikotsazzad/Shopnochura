@@ -1,15 +1,16 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import { HashLink } from 'react-router-hash-link'
 import { gsap } from 'gsap'
 
-// href = full-path anchor (works from any page), to = react-router page link
+// to = HashLink (navigates to page + scrolls to anchor), page = router Link
 const navLinks = [
-  { href: '/#home', label: 'Home' },
-  { href: '/#about', label: 'About' },
-  { to: '/menu', label: 'Menu' },
-  { href: '/#gallery', label: 'Gallery' },
-  { href: '/#contact', label: 'Contact' },
+  { to: '/#home', label: 'Home' },
+  { to: '/#about', label: 'About' },
+  { page: '/menu', label: 'Menu' },
+  { to: '/#gallery', label: 'Gallery' },
+  { to: '/#contact', label: 'Contact' },
 ]
 
 export default function Navbar() {
@@ -61,35 +62,37 @@ export default function Navbar() {
         {/* Desktop links */}
         <ul className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <li key={link.to || link.href}>
-              {link.to ? (
+            <li key={link.page || link.to}>
+              {link.page ? (
                 <Link
-                  to={link.to}
+                  to={link.page}
                   className="relative font-body text-sm font-medium text-brand-cream/80 hover:text-brand-cream transition-colors duration-200 group"
                 >
                   {link.label}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-red group-hover:w-full transition-all duration-300 rounded-full" />
                 </Link>
               ) : (
-                <a
-                  href={link.href}
+                <HashLink
+                  smooth
+                  to={link.to}
                   className="relative font-body text-sm font-medium text-brand-cream/80 hover:text-brand-cream transition-colors duration-200 group"
                 >
                   {link.label}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-red group-hover:w-full transition-all duration-300 rounded-full" />
-                </a>
+                </HashLink>
               )}
             </li>
           ))}
         </ul>
 
         {/* CTA button */}
-        <a
-          href="tel:+8801704447948"
+        <HashLink
+          smooth
+          to="/#contact"
           className="hidden md:flex items-center gap-2 px-4 py-2 bg-brand-red text-white text-sm font-medium rounded-full hover:opacity-80 transition-all duration-300 glow-red"
         >
           <span>📞</span> Reserve Now
-        </a>
+        </HashLink>
 
         {/* Mobile hamburger */}
         <button
@@ -115,33 +118,36 @@ export default function Navbar() {
           >
             <ul className="flex flex-col px-6 py-4 gap-4">
               {navLinks.map((link) => (
-                <li key={link.to || link.href}>
-                  {link.to ? (
+                <li key={link.page || link.to}>
+                  {link.page ? (
                     <Link
-                      to={link.to}
+                      to={link.page}
                       onClick={() => setMenuOpen(false)}
                       className="block font-body text-brand-cream/80 hover:text-brand-red transition-colors duration-200 py-1"
                     >
                       {link.label}
                     </Link>
                   ) : (
-                    <a
-                      href={link.href}
+                    <HashLink
+                      smooth
+                      to={link.to}
                       onClick={() => setMenuOpen(false)}
                       className="block font-body text-brand-cream/80 hover:text-brand-red transition-colors duration-200 py-1"
                     >
                       {link.label}
-                    </a>
+                    </HashLink>
                   )}
                 </li>
               ))}
               <li>
-                <a
-                  href="tel:+8801704447948"
+                <HashLink
+                  smooth
+                  to="/#contact"
+                  onClick={() => setMenuOpen(false)}
                   className="block text-center px-4 py-2 bg-brand-red text-white text-sm font-medium rounded-full"
                 >
                   📞 Reserve Now
-                </a>
+                </HashLink>
               </li>
             </ul>
           </motion.div>
