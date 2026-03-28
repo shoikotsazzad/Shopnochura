@@ -14,11 +14,11 @@ function HomePage() {
     <div className="min-h-screen bg-brand-dark overflow-x-hidden">
       <Navbar />
       <Hero />
+      <PhotoStrip />
       <About />
       <Menu />
       <Gallery />
       <Contact />
-      <PhotoStrip />
       <Footer />
     </div>
   )
