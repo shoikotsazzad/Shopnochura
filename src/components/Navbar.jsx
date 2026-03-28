@@ -1,13 +1,15 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 
+// href = full-path anchor (works from any page), to = react-router page link
 const navLinks = [
-  { href: '#home', label: 'Home' },
-  { href: '#about', label: 'About' },
-  { href: '#menu', label: 'Menu' },
-  { href: '#gallery', label: 'Gallery' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/#home', label: 'Home' },
+  { href: '/#about', label: 'About' },
+  { to: '/menu', label: 'Menu' },
+  { href: '/#gallery', label: 'Gallery' },
+  { href: '/#contact', label: 'Contact' },
 ]
 
 export default function Navbar() {
@@ -42,7 +44,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
         {/* Logo */}
-        <a href="#home" className="flex items-center gap-2 group min-w-0">
+        <Link to="/" className="flex items-center gap-2 group min-w-0">
           <img
             src="/logo..jpg"
             alt="Shopnochura"
@@ -54,19 +56,29 @@ export default function Navbar() {
           <span className="font-display text-sm sm:text-xl font-bold text-brand-cream truncate">
             Shopnochura
           </span>
-        </a>
+        </Link>
 
         {/* Desktop links */}
         <ul className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                className="relative font-body text-sm font-medium text-brand-cream/80 hover:text-brand-cream transition-colors duration-200 group"
-              >
-                {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-red group-hover:w-full transition-all duration-300 rounded-full" />
-              </a>
+            <li key={link.to || link.href}>
+              {link.to ? (
+                <Link
+                  to={link.to}
+                  className="relative font-body text-sm font-medium text-brand-cream/80 hover:text-brand-cream transition-colors duration-200 group"
+                >
+                  {link.label}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-red group-hover:w-full transition-all duration-300 rounded-full" />
+                </Link>
+              ) : (
+                <a
+                  href={link.href}
+                  className="relative font-body text-sm font-medium text-brand-cream/80 hover:text-brand-cream transition-colors duration-200 group"
+                >
+                  {link.label}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-red group-hover:w-full transition-all duration-300 rounded-full" />
+                </a>
+              )}
             </li>
           ))}
         </ul>
@@ -103,14 +115,24 @@ export default function Navbar() {
           >
             <ul className="flex flex-col px-6 py-4 gap-4">
               {navLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    onClick={() => setMenuOpen(false)}
-                    className="block font-body text-brand-cream/80 hover:text-brand-red transition-colors duration-200 py-1"
-                  >
-                    {link.label}
-                  </a>
+                <li key={link.to || link.href}>
+                  {link.to ? (
+                    <Link
+                      to={link.to}
+                      onClick={() => setMenuOpen(false)}
+                      className="block font-body text-brand-cream/80 hover:text-brand-red transition-colors duration-200 py-1"
+                    >
+                      {link.label}
+                    </Link>
+                  ) : (
+                    <a
+                      href={link.href}
+                      onClick={() => setMenuOpen(false)}
+                      className="block font-body text-brand-cream/80 hover:text-brand-red transition-colors duration-200 py-1"
+                    >
+                      {link.label}
+                    </a>
+                  )}
                 </li>
               ))}
               <li>

@@ -21,13 +21,19 @@ export default function Footer() {
 
           {/* Quick links */}
           <nav className="flex items-center gap-6">
-            {['#home', '#about', '#menu', '#gallery', '#contact'].map((href) => (
+            {[
+              { href: '/#home', label: 'Home' },
+              { href: '/#about', label: 'About' },
+              { href: '/menu', label: 'Menu' },
+              { href: '/#gallery', label: 'Gallery' },
+              { href: '/#contact', label: 'Contact' },
+            ].map((link) => (
               <a
-                key={href}
-                href={href}
+                key={link.href}
+                href={link.href}
                 className="font-body text-brand-cream/40 hover:text-brand-cream text-xs transition-colors duration-200 capitalize"
               >
-                {href.replace('#', '')}
+                {link.label}
               </a>
             ))}
           </nav>
